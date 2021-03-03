@@ -43,6 +43,17 @@
                     width: 80%;
                     padding: 10px;
                     margin: 10px 0px;
+                    &.ng-touched.ng-invalid{
+                        border: 1px solid #a50016;
+                    }
+                }
+                select{
+                    width: 86%;
+                    padding: 10px;
+                    margin: 10px 0px;
+                    &.ng-touched.ng-invalid{
+                        border: 1px solid #a50016;
+                    }
                 }
             }
 

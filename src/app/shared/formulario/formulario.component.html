@@ -3,46 +3,49 @@
         <h3>DIRECCIÓN DE ENVÍO</h3>
     </div>
     <section>
-        <form autocomplete="off">
+        <form autocomplete="off" (submit)="submitForm()" [formGroup]="formInfo">
            <div class="input">
             <img src="./assets/icons/user.png" alt="">
-               <input type="text" placeholder="Nombre">
+               <input type="text" placeholder="Nombre" formControlName="nombre">
            </div> 
            <div class="input">
             <img src="./assets/icons/user.png" alt="">
-               <input type="text" placeholder="Apellidos">
+               <input type="text" placeholder="Apellidos" formControlName="apellidos">
            </div> 
            <div class="input">
             <img src="./assets/icons/email.png" alt="">
-               <input type="text" placeholder="Correo Electrónico">
+               <input type="text" placeholder="Correo Electrónico" formControlName="correo">
            </div> 
            <div class="input">
             <img src="./assets/icons/phone-call.png" alt="">
-               <input type="text" placeholder="Número de teléfono">
+               <input type="text" placeholder="Número de teléfono" formControlName="telefono">
            </div> 
            <div class="input">
             <img src="./assets/icons/ubicacion.png" alt="">
-               <input type="text" placeholder="Código postal">
+               <input type="text" placeholder="Código postal" formControlName="codigo" maxlength="5" minlength="5" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"  (change)="buscarCodigo($event.target.value)">
            </div> 
            <div class="input">
             <img src="./assets/icons/ubicacion.png" alt="">
-               <input type="text" placeholder="Colonia">
+               <input type="text" placeholder="Colonia" formControlName="colonia" [readOnly]="deshabilitar" *ngIf="colonies.length==1">
+               <select placeholder="Colonia" [disabled]="deshabilitar" *ngIf="colonies.length>1" formControlName="colonia">
+                  <option [value]="item" *ngFor="let item of colonies">{{ item }}</option>
+               </select>
            </div> 
            <div class="input">
             <img src="./assets/icons/ubicacion.png" alt="">
-               <input type="text" placeholder="Estado/Región">
+               <input type="text" placeholder="Estado/Región" formControlName="estado" [readOnly]="deshabilitar">
            </div> 
            <div class="input">
             <img src="./assets/icons/ubicacion.png" alt="">
-               <input type="text" placeholder="Ciudad">
+               <input type="text" placeholder="Ciudad" formControlName="ciudad" [readOnly]="deshabilitar">
            </div> 
            <div class="input">
             <img src="./assets/icons/ubicacion.png" alt="">
-               <input type="text" placeholder="Delegación o municipio">
+               <input type="text" placeholder="Delegación o municipio" formControlName="delegacion" [readOnly]="deshabilitar">
            </div> 
            <div class="input">
             <img src="./assets/icons/ubicacion.png" alt="">
-               <input type="text" placeholder="Calle">
+               <input type="text" placeholder="Calle" formControlName="calle">
            </div> 
 
            <div class="buttons">
