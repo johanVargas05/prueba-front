@@ -16,20 +16,53 @@
     }
     
     .productos{
-        // height: 500px;       
+        .producto{
+            display: flex;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap:wrap;
+            align-items: center;
+            border: 1px solid #ede9ea;
+            img{
+                max-width: 20%;
+                -ms-flex: 0 0 20%;
+                    flex: 0 0 20%;
+            }
+            p{
+                &.nombre-producto{
+                    -ms-flex: 0 0 50%;
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    padding: 0px 10px;
+                    color: #c3c3c1;
+                    font-size: 0.8em;
+                    
+                }
+
+                &.valores-text{
+                    -ms-flex: 0 0 10%;
+                    flex: 0 0 10%;
+                    max-width: 10%;
+                    font-weight: bold;
+                    text-align: right;
+                    font-size: 0.9em;
+                }
+            }
+        }
       
     }
     button{
-        padding: 15px;
+        padding: 10px 20px;
         background-color: #d00f3e;
         color: #fff;
         border: 0px;
-        margin: 10px;
+        margin: 15px;
         float: right;
     }
     .valores{
         display: flex;
-        padding: 20px;
+        padding: 40px 20px;
         width: 100%;
         box-sizing: border-box;
         flex-wrap:wrap;

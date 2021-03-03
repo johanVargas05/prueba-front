@@ -1,19 +1,23 @@
 <div class="checkout">
     <div class="header">
-        <h3>DIRECCIÓN DE ENVÍO</h3>
+        <h3>RESUMEN DE LA ORDEN</h3>
     </div>
     <section class="productos">
-
+        <div class="producto" *ngFor="let item of productos">
+            <img [src]="item.image" alt="">
+            <p class="nombre-producto">{{ item.name }}</p>
+            <p class="valores-text">{{ item.price | currency }}</p>
+        </div>
     </section>
     <button type="button">Editar</button>
     <section class="valores">
         <p>SUBTOTAL</p>
-        <p class="valores-text">$13,974.00</p>
+        <p class="valores-text">{{total | currency}}</p>
         <p>ENVÍO</p>
         <p class="valores-text">A Calcular</p>
     </section>
     <section class="total">
         <p>TOTAL</p>
-        <p class="valores-text">$13,974.00</p>    
+        <p class="valores-text">{{total | currency}}</p>    
     </section>
 </div>
